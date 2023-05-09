@@ -1,15 +1,19 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  
+  <HelloWorld msg="Welcome to Nugatoria"/>
+  <NugatoriaMain msg="Howdy Doo"/>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import NugatoriaMain from './components/NugatoriaMain.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    NugatoriaMain
   }
 }
 </script>
