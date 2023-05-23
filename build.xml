@@ -22,11 +22,11 @@
    	<echo>"${basedir}"</echo>
    	<echo>"${project.dir.deploy}"</echo>
    	<echo>"${project.app.warname}"</echo>
-      <delete dir="${project.dir.deploy}/web/WEB-INF/classes" />
+     <!-- <delete dir="${project.dir.deploy}/web/WEB-INF/classes" /> -->
    	  <mkdir dir="${project.dir.deploy}/web/WEB-INF/classes" />
    	  <javac destdir="${project.dir.deploy}/web/WEB-INF/classes" srcdir="src" includeantruntime="false">
    	     <classpath>
-   	        <fileset dir="${basedir}/web/WEB-INF/lib">
+   	        <fileset dir="${basedir}/src/main/web/WEB-INF/lib">
    	           <include name="*" />	
    	        </fileset>
    	     	<!--<fileset dir="${tomcat.webapps.dir}/../lib" id="id">
@@ -44,9 +44,9 @@
 	
    <target name="war" depends="clean,compile" >
       <mkdir dir="${project.dir.dist}"/>
-      <war destfile="${project.dir.dist}/${project.app.warname}" basedir="${basedir}/web" webxml="${basedir}/web/WEB-INF/web.xml">
+      <war destfile="${project.dir.dist}/${project.app.warname}" basedir="${basedir}/src/main/web" webxml="${basedir}/src/main/web/WEB-INF/web.xml">
          <exclude name="WEB-INF/**" />
-            <lib dir="${basedir}/web/WEB-INF/lib">
+            <lib dir="${basedir}/src/main/web/WEB-INF/lib">
                <include name="*.jar" />
             </lib>
          <classes dir="deploy\web\WEB-INF\classes" />
